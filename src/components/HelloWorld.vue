@@ -1,37 +1,80 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h1>{{message}}</h1>
+    <div class="main-slide">
+      <b-carousel
+          id="carousel-1"
+          v-model="slide"
+          :interval="4000"
+          controls
+          indicators
+          background="#ababab"
+          style="text-shadow: 1px 1px 2px #333;"
+          @sliding-start="onSlideStart"
+          @sliding-end="onSlideEnd"
+      >
+        <!-- Text slides with image -->
+        <b-carousel-slide
+            caption="First slide"
+            text="Nulla vitae elit libero, a pharetra augue mollis interdum."
+            img-src="https://picsum.photos/1024/480/?image=52"
+        ></b-carousel-slide>
+
+        <!-- Slides with custom text -->
+        <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=54">
+          <h1>Hello world!</h1>
+        </b-carousel-slide>
+
+
+      </b-carousel>
+
+      <div>
+        <p v-bind:title="message">순서</p>
+
+      </div>
+    </div>
+
+    <p>store 에 있는 counter :  {{ paData.counter }}</p>
+    <p>store 에 있는 years : {{ paData.years}}</p>
 
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'HelloWorld',
+  components : {
+
+  },
   data : ()=> ({
-    message : "d"
+    message : "hello man nice to meet you ",
+    slide: 0,
+    sliding: null,
+    paData : '',
   }),
-  props: {
-    msg: String
+  methods : {
+    onSlideStart() {
+      this.sliding = true;
+    },
+    onSlideEnd() {
+      this.sliding = false;
+    }
+  },
+  mounted() {
+   this.paData = this.$store.state;
+
+
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+
+
+</style>
+<style>
+.img-fluid{
+  height: 500px;
 }
 </style>
