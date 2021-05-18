@@ -35,6 +35,14 @@
 
     <p>store 에 있는 counter :  {{ paData.counter }}</p>
     <p>store 에 있는 years : {{ paData.years}}</p>
+    <p v-for="item of paData.menuList" :key="item.value">{{item}}</p>
+
+
+    <router-link to="/menu/menu1" class="btn">DD</router-link>
+
+
+
+
 
   </div>
 </template>
@@ -58,12 +66,17 @@ export default {
     },
     onSlideEnd() {
       this.sliding = false;
-    }
+    },
   },
   mounted() {
    this.paData = this.$store.state;
 
 
+  },
+  computed: {
+    linkClass() {
+      return 'w-100 text-decoration-none text-dark side-menu-link'
+    },
   }
 }
 </script>
