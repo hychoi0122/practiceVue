@@ -3,39 +3,26 @@ import Router from 'vue-router'
 import bootstrap from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-import menuList from '@/routerPath/menu'
-
+import routerPath from '@/routerPath/menu'
 
 Vue.use(Router)
 Vue.use(bootstrap)
-// menu //
-// board //
-// board2//
 
 const router = new Router({
-
     routes : [
         {
             path:'/',
-            name:'HelloWorld',
-            component : ()=> import('@/components/HelloWorld')
+            name:'index',
+            component : ()=> import('@/components/index')
         },
-
         {
             path:'/menu',
             name:'menu',
-            component : ()=> import('@/components/menu'),
-            children : menuList
-
+            component : ()=> import('@/menu/menuFrame'),
+            children : routerPath.menu
         },
-
-
     ]
 
-
-
 })
-
-console.log(router);
 
 export default router

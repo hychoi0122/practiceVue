@@ -9,8 +9,8 @@ export const store = new Vuex.Store({
        counter : 0,
        years : [2020,2019,2018],
        menuList : [
-           {menuName:'MENU1', value :1 , urlPath : '/menu/menu1'},
-           {menuName:'MENU2', value :2 , urlPath : '/menu/menu2'},
+           {menuName:'TEST PAGE', value :1 , urlPath : '/menu/testPage'},
+           {menuName:'CODE REVIEW', value :2 , urlPath : '/menu/codeReview'},
            {menuName:'MENU3', value :3 , urlPath : '/menu/menu3'},
            {menuName:'MENU4', value :4 , urlPath : '/menu/menu4'}
        ],

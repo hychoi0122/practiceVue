@@ -1,13 +1,12 @@
 <template>
   <div>
-    <router-link to="/" class="btn">전 페이지</router-link>
+    menu2
   </div>
-
 </template>
 
 <script>
 export default {
-name: "menu1"
+name: "codeReview"
 }
 </script>
 

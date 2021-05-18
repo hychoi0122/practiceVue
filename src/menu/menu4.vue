@@ -1,10 +1,12 @@
 <template>
-    <router-view></router-view>
+  <div>
+    menu4
+  </div>
 </template>
 
 <script>
 export default {
-name: "menu"
+name: "menuFrame"
 }
 </script>
 
