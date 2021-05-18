@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link to="/" class="btn">전 페이지</router-link>
+   <router-link to="/"> <span>전 페이지</span></router-link>
     <button @click="con($data.test)">버튼 클릭 요망</button>
     안녕{{ test }}하세요
 

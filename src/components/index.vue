@@ -29,12 +29,11 @@
 
       <div>
         <p v-bind:title="message">순서</p>
-
       </div>
     </div>
 
     <p>store 에 있는 counter :  {{ paData.counter }}</p>
-    <p>store 에 있는 years : {{ paData.years}}</p>
+    <p>store 에 있는 years : {{ paData.thisYear}}</p>
     <p v-for="item of paData.menuList" :key="item.value">{{item}}</p>
 
 
