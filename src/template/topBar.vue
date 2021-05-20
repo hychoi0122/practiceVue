@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="light" variant="faded">
-      <b-navbar-brand href="/">HY CHOI</b-navbar-brand>
+      <b-navbar-brand to="/">HY CHOI</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -9,7 +9,7 @@
         <b-navbar-nav>
 
           <b-nav-item v-for="item of this.$store.state.menuList" :key="item.value"  :to="item.urlPath">{{item.menuName }}</b-nav-item>
-          <b-nav-item href="/" disabled>Disabled</b-nav-item>
+          <b-nav-item to="/" disabled>Disabled</b-nav-item>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
@@ -28,14 +28,14 @@
 <!--            <b-dropdown-item href="#">FA</b-dropdown-item>-->
 <!--          </b-nav-item-dropdown>-->
 
-          <b-nav-item-dropdown right>
-            <!-- Using 'button-content' slot -->
-            <template #button-content>
-              <em>User</em>
-            </template>
-            <b-dropdown-item href="#">Profile</b-dropdown-item>
-            <b-dropdown-item href="#">Sign Out</b-dropdown-item>
-          </b-nav-item-dropdown>
+<!--          <b-nav-item-dropdown right>-->
+<!--            &lt;!&ndash; Using 'button-content' slot &ndash;&gt;-->
+<!--            <template #button-content>-->
+<!--              <em>User</em>-->
+<!--            </template>-->
+<!--            <b-dropdown-item to="#">Profile</b-dropdown-item>-->
+<!--            <b-dropdown-item to="#">Sign Out</b-dropdown-item>-->
+<!--          </b-nav-item-dropdown>-->
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>

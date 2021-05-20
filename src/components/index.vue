@@ -20,24 +20,24 @@
         ></b-carousel-slide>
 
         <!-- Slides with custom text -->
-        <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=54">
+        <b-carousel-slide img-src=@/assets/img/laptop_menu1_slide>
           <h1>Hello world!</h1>
         </b-carousel-slide>
 
 
       </b-carousel>
-
+      <img src=@/assets/img/laptop_menu1_slide.jpg>
       <div>
         <p v-bind:title="message">순서</p>
       </div>
     </div>
 
-    <p>store 에 있는 counter :  {{ paData.counter }}</p>
-    <p>store 에 있는 years : {{ paData.thisYear}}</p>
-    <p v-for="item of paData.menuList" :key="item.value">{{item}}</p>
+<!--    <p>store 에 있는 counter :  {{ paData.counter }}</p>-->
+<!--    <p>store 에 있는 years : {{ paData.thisYear}}</p>-->
+<!--    <p v-for="item of paData.menuList" :key="item.value">{{item}}</p>-->
 
 
-    <router-link to="/menu/menu1" class="btn">DD</router-link>
+<!--    <router-link to="/menu/menu1" class="btn">DD</router-link>-->
 
 
 
@@ -86,7 +86,5 @@ export default {
 
 </style>
 <style>
-.img-fluid{
-  height: 500px;
-}
+
 </style>

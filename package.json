@@ -41,17 +41,6 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ],
-  "description": "## Project setup ``` npm install ```",
-  "main": "babel.config.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hychoi0122/practicevue.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hychoi0122/practicevue/issues"
-  },
-  "homepage": "https://github.com/hychoi0122/practicevue#readme"
+  ]
+
 }
