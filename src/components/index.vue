@@ -34,11 +34,13 @@
     <div style="display: flex; justify-content: space-evenly; margin-top:150px;">
       <h1 style="margin-top:30px; ">S K I L L</h1>
     </div>
-    <div class="main1_container ">
+    <div>
+      <div :class="[isPc? main1_container : main1_containerM]">
         <div class="main1_inline" v-for="(item,idx) of iconImg" :key="idx">
           <b-card :title=item.name :img-src=item.img img-alt="Image" img-top>
           </b-card>
         </div>
+      </div>
     </div>
 
 
@@ -60,8 +62,6 @@ import nodeImg from "@/assets/img/NODE.png"
 import oracleImg from "@/assets/img/ORACLE.png"
 import vueImg from "@/assets/img/Vue.png"
 
-
-
 export default {
   name: 'index',
   components : {
@@ -77,8 +77,16 @@ export default {
       { name : "NODE", img : nodeImg },
       { name : "ORACLE", img : oracleImg },
       { name : "VUE", img : vueImg },
+    ],
+    isPc : true,
+    main1_container : {
+      main1_container : true
+    },
+    main1_containerM : {
+      main1_containerM : true
+    },
 
-    ]
+
 
   }),
   methods : {
@@ -88,13 +96,30 @@ export default {
     onSlideEnd() {
       this.sliding = false;
     },
+    getPlatform(){
+      const filter = "win16|win32|win64|mac";
+      this.isPc = true;
+      if (navigator.platform ) {
+        if (filter.indexOf(navigator.platform.toLowerCase()) < 0) {
+          this.isPc = false;
+        } else {
+          this.isPc = true;
+        }
+      }else{
+        //기본값
+        this.isPc = true;
+      }
+    }
+
   },
   mounted() {
    this.paData = this.$store.state;
+   this.getPlatform();
   },
   computed: {
 
-  }
+  },
+
 }
 </script>
 <style scoped>
@@ -106,24 +131,33 @@ export default {
   margin-top:100px;
   display: flex;
   justify-content: space-evenly;
+
+}
+.main1_containerM{
+  margin-top:100px;
+  display: flex;
+  justify-content: start;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
 }
 .main1_inline{
   display: inline-flex;
+  flex: 0 0 auto;
 }
 .main-slide{
   width: 90%;
   margin-left: 5%;
   margin-right: 5%;
-  min-width: 700px;
-
   margin-top:20px;
+
 }
 
 </style>
 <style>
 .card-img{
-  width: 300px;
-  height: 300px;
+  width: 300vh;
+  height: 300vh;
 }
 .btn-secondary{
   background-color: transparent;
@@ -134,8 +168,8 @@ export default {
   height: 500px;
 }
 .card-img-top{
-  width: 300px;
-  height: 300px;
+  width: 30vh;
+  height: 30vh;
   padding:20%
 }
 
