@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="index">
     <div class="main-slide">
       <b-carousel
           id="carousel-1"
@@ -12,41 +12,55 @@
           @sliding-start="onSlideStart"
           @sliding-end="onSlideEnd"
       >
-        <!-- Text slides with image -->
         <b-carousel-slide
             caption="First slide"
             text="Nulla vitae elit libero, a pharetra augue mollis interdum."
-            img-src="https://picsum.photos/1024/480/?image=52"
+            img-src="https://picsum.photos/1024/480/?image=29"
         ></b-carousel-slide>
 
-        <!-- Slides with custom text -->
-        <b-carousel-slide img-src=@/assets/img/laptop_menu1_slide>
-          <h1>Hello world!</h1>
-        </b-carousel-slide>
+        <b-carousel-slide
+            caption="Second slide"
+            text="Nulla vitae elit libero, a pharetra augue mollis interdum."
+            img-src="https://picsum.photos/1024/480/?image=53"
+        ></b-carousel-slide>
 
-
+        <b-carousel-slide
+            caption="Third slide"
+            text="Nulla vitae elit libero, a pharetra augue mollis interdum."
+            img-src="https://picsum.photos/1024/480/?image=19"
+        ></b-carousel-slide>
       </b-carousel>
-      <img src=@/assets/img/laptop_menu1_slide.jpg>
-      <div>
-        <p v-bind:title="message">순서</p>
-      </div>
+    </div>
+    <div style="display: flex; justify-content: space-evenly; margin-top:150px;">
+      <h1 style="margin-top:30px; ">S K I L L</h1>
+    </div>
+    <div class="main1_container ">
+        <div class="main1_inline" v-for="(item,idx) of iconImg" :key="idx">
+          <b-card :title=item.name :img-src=item.img img-alt="Image" img-top>
+          </b-card>
+        </div>
     </div>
 
-<!--    <p>store 에 있는 counter :  {{ paData.counter }}</p>-->
-<!--    <p>store 에 있는 years : {{ paData.thisYear}}</p>-->
-<!--    <p v-for="item of paData.menuList" :key="item.value">{{item}}</p>-->
 
-
-<!--    <router-link to="/menu/menu1" class="btn">DD</router-link>-->
-
-
-
-
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
   </div>
+
+
+
 </template>
 
 <script>
+import javaImg from "@/assets/img/JAVA.png"
+import jsImg from "@/assets/img/JS.png"
+import nodeImg from "@/assets/img/NODE.png"
+import oracleImg from "@/assets/img/ORACLE.png"
+import vueImg from "@/assets/img/Vue.png"
+
+
 
 export default {
   name: 'index',
@@ -54,10 +68,18 @@ export default {
 
   },
   data : ()=> ({
-    message : "hello man nice to meet you ",
     slide: 0,
     sliding: null,
     paData : '',
+    iconImg : [
+      { name : "JAVA", img : javaImg },
+      { name : "JAVA SCRIPT", img : jsImg },
+      { name : "NODE", img : nodeImg },
+      { name : "ORACLE", img : oracleImg },
+      { name : "VUE", img : vueImg },
+
+    ]
+
   }),
   methods : {
     onSlideStart() {
@@ -69,22 +91,52 @@ export default {
   },
   mounted() {
    this.paData = this.$store.state;
-
-
   },
   computed: {
-    linkClass() {
-      return 'w-100 text-decoration-none text-dark side-menu-link'
-    },
+
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.index{
+  display: flex;
+  flex-direction: column;
+}
+.main1_container{
+  margin-top:100px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.main1_inline{
+  display: inline-flex;
+}
+.main-slide{
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  min-width: 700px;
 
+  margin-top:20px;
+}
 
 </style>
 <style>
+.card-img{
+  width: 300px;
+  height: 300px;
+}
+.btn-secondary{
+  background-color: transparent;
+  border-color: #2c3e50;
+  color: rgba(0, 0, 0, 0.5);
+}
+.img-fluid{
+  height: 500px;
+}
+.card-img-top{
+  width: 300px;
+  height: 300px;
+  padding:20%
+}
 
 </style>

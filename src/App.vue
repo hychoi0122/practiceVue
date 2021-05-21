@@ -6,7 +6,6 @@
 </template>
 
 <script>
-// import HelloWorld from './components/index.vue'
 import topBar from './template/topBar'
 export default {
   name: 'App',
@@ -23,12 +22,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-</style>
-<style>
-.img-fluid{
-  height: 500px;
 }
 
 </style>
