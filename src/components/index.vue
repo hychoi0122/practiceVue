@@ -49,6 +49,16 @@
     <br>
     <br>
     <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
   </div>
 
 
@@ -131,6 +141,7 @@ export default {
   margin-top:100px;
   display: flex;
   justify-content: space-evenly;
+  overflow: hidden;
 
 }
 .main1_containerM{

@@ -20,9 +20,9 @@
     </div>
 
     <div class="study_con study_card">
-      <h4><p>양방향 data 사용</p></h4>
-      message : {{ message }}
-      <p>이처럼 data영역에 message를 선언한후 중괄호  <code>{{}}</code>를 이용하여 변수를 사용할 수 있다.</p>
+      <h4><p>조건문과 반복문</p></h4>
+      seen : true ( data에 선언되어있음 )
+      <table><tbody><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app-3"</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"seen"</span>&gt;</span>이제 나를 볼 수 있어요<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></tbody></table>
     </div>
   </div>
 </template>
