@@ -1,21 +1,5 @@
 <template>
   <div>
-<!--    <b-carousel-->
-<!--        id="carousel-1"-->
-<!--        background="#ababab"-->
-<!--        style="text-shadow: 1px 1px 2px #333;"-->
-<!--    >-->
-<!--      &lt;!&ndash; Slides with custom text &ndash;&gt;-->
-<!--      <b-carousel-slide  :img-src="pic" >-->
-<!--        <h1>TEST PAGE</h1>-->
-<!--      </b-carousel-slide>-->
-
-<!--    </b-carousel>-->
-
-<!--    <router-link to="/"> <span>전 페이지</span></router-link>-->
-<!--    <button >버튼 클릭 요망</button>-->
-<!--    안녕{{ test }}하세요-->
-<!--    <button to="/menu/menu3">안녕하세요?</button>-->
     <div class="main_container">
       <div class="study_con ">
         <b-button-group>
@@ -28,7 +12,7 @@
 
       </div>
       <div v-if="!pageTab">
-        TEST
+        <div :title="titleMessage">ㅇㅇ</div>
       </div>
 
 
@@ -61,6 +45,7 @@ export default {
     classObject: {
       active: true,
     },
+    titleMessage:"안녕하세요",
 
 
   }),

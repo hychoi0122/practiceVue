@@ -1,6 +1,35 @@
 <template>
   <div class="index">
     <div class="main-slide">
+<!--      <b-carousel-->
+<!--          id="carousel-1"-->
+<!--          v-model="slide"-->
+<!--          :interval="4000"-->
+<!--          controls-->
+<!--          indicators-->
+<!--          background="#ababab"-->
+<!--          style="text-shadow: 1px 1px 2px #333;"-->
+<!--          @sliding-start="onSlideStart"-->
+<!--          @sliding-end="onSlideEnd"-->
+<!--      >-->
+<!--        <b-carousel-slide-->
+<!--            caption="First slide"-->
+<!--            text="Nulla vitae elit libero, a pharetra augue mollis interdum."-->
+<!--            img-src="https://picsum.photos/1024/480/?image=29"-->
+<!--        ></b-carousel-slide>-->
+
+<!--        <b-carousel-slide-->
+<!--            caption="Second slide"-->
+<!--            text="Nulla vitae elit libero, a pharetra augue mollis interdum."-->
+<!--            img-src="https://picsum.photos/1024/480/?image=53"-->
+<!--        ></b-carousel-slide>-->
+
+<!--        <b-carousel-slide-->
+<!--            caption="Third slide"-->
+<!--            text="Nulla vitae elit libero, a pharetra augue mollis interdum."-->
+<!--            img-src="https://picsum.photos/1024/480/?image=19"-->
+<!--        ></b-carousel-slide>-->
+<!--      </b-carousel>-->
       <b-carousel
           id="carousel-1"
           v-model="slide"
@@ -13,27 +42,19 @@
           @sliding-end="onSlideEnd"
       >
         <b-carousel-slide
-            caption="First slide"
-            text="Nulla vitae elit libero, a pharetra augue mollis interdum."
+            caption="최호영 개발 블로그"
+            text="최호영의 개발 블로그입니다."
             img-src="https://picsum.photos/1024/480/?image=29"
         ></b-carousel-slide>
-
-        <b-carousel-slide
-            caption="Second slide"
-            text="Nulla vitae elit libero, a pharetra augue mollis interdum."
-            img-src="https://picsum.photos/1024/480/?image=53"
-        ></b-carousel-slide>
-
-        <b-carousel-slide
-            caption="Third slide"
-            text="Nulla vitae elit libero, a pharetra augue mollis interdum."
-            img-src="https://picsum.photos/1024/480/?image=19"
-        ></b-carousel-slide>
       </b-carousel>
+
+
+
     </div>
     <div style="display: flex; justify-content: space-evenly; margin-top:150px;">
       <h1 style="margin-top:30px; ">S K I L L</h1>
     </div>
+
     <div>
       <div :class="[isPc? main1_container : main1_containerM]">
         <div class="main1_inline" v-for="(item,idx) of iconImg" :key="idx">
@@ -43,7 +64,14 @@
       </div>
     </div>
 
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <br>
     <br>
     <br>
@@ -116,8 +144,8 @@ export default {
           this.isPc = true;
         }
       }else{
-        //기본값
         this.isPc = true;
+
       }
     }
 
@@ -157,9 +185,9 @@ export default {
   flex: 0 0 auto;
 }
 .main-slide{
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
+  /*width: 90%;*/
+  /*margin-left: 5%;*/
+  /*margin-right: 5%;*/
   margin-top:20px;
 
 }

@@ -1,6 +1,9 @@
 <template>
-  <div>
+  <div style="height: 5000px">
     menu2
+    <br>
+    <br>
+
   </div>
 </template>
 
