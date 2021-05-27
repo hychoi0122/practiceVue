@@ -32,38 +32,43 @@
 <!--      </b-carousel>-->
       <b-carousel
           id="carousel-1"
-          v-model="slide"
-          :interval="4000"
-          controls
-          indicators
           background="#ababab"
           style="text-shadow: 1px 1px 2px #333;"
-          @sliding-start="onSlideStart"
-          @sliding-end="onSlideEnd"
       >
         <b-carousel-slide
-            caption="최호영 개발 블로그"
-            text="최호영의 개발 블로그입니다."
-            img-src="https://picsum.photos/1024/480/?image=29"
+            caption="HY BLOG"
+            text="𝓥𝓲𝓻𝓮𝓼 𝓪𝓬𝓺𝓾𝓲𝓻𝓲𝓽 𝓮𝓾𝓷𝓭𝓸"
+            img-src="https://picsum.photos/1024/480/?image=9"
+
         ></b-carousel-slide>
       </b-carousel>
 
 
 
     </div>
-    <div style="display: flex; justify-content: space-evenly; margin-top:150px;">
-      <h1 style="margin-top:30px; ">S K I L L</h1>
-    </div>
+      <div id="skillDiv">
+        <div :class="[isShow?'con1_ani':'con_non']">
+<!--        <div v-if="isShow" class='con_non'>-->
+          <div style="display: flex; justify-content: space-evenly; margin-top:150px;"  >
+            <h1 style="margin-top:30px; ">S K I L L</h1>
+          </div>
 
-    <div>
-      <div :class="[isPc? main1_container : main1_containerM]">
-        <div class="main1_inline" v-for="(item,idx) of iconImg" :key="idx">
-          <b-card :title=item.name :img-src=item.img img-alt="Image" img-top>
-          </b-card>
+          <div>
+            <div :class="[isPc? main1_container : main1_containerM]">
+              <div class="main1_inline" v-for="(item,idx) of iconImg" :key="idx">
+                <b-card :title=item.name :img-src=item.img img-alt="Image" img-top>
+                  <br>
+                  <b-progress :value="item.skillValue" max="100" class="mb-3"></b-progress>
+                </b-card>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
+    </div>
+    <div v-show="false">
+      <img v-for="n in 10" :key="n" :src="'https://picsum.photos/100/100/?image='+n">
+    </div>
     <br>
     <br>
     <br>
@@ -110,29 +115,30 @@ export default {
     sliding: null,
     paData : '',
     iconImg : [
-      { name : "JAVA", img : javaImg },
-      { name : "JAVA SCRIPT", img : jsImg },
-      { name : "NODE", img : nodeImg },
-      { name : "ORACLE", img : oracleImg },
-      { name : "VUE", img : vueImg },
+      { name : "JAVA SCRIPT", img : jsImg , skillValue:'60'},
+      { name : "VUE", img : vueImg , skillValue:'50'},
+      { name : "NODE", img : nodeImg , skillValue:'50'},
+      { name : "ORACLE", img : oracleImg , skillValue:'50'},
+      { name : "JAVA", img : javaImg , skillValue:'50' },
     ],
     isPc : true,
+    isShow : false,
     main1_container : {
       main1_container : true
     },
     main1_containerM : {
       main1_containerM : true
     },
+    obConfig : {
+      threshold: 0.6
+    }
 
 
 
   }),
   methods : {
-    onSlideStart() {
-      this.sliding = true;
-    },
-    onSlideEnd() {
-      this.sliding = false;
+    getStoreData(){
+      this.paData = this.$store.state;
     },
     getPlatform(){
       const filter = "win16|win32|win64|mac";
@@ -147,12 +153,38 @@ export default {
         this.isPc = true;
 
       }
+    },
+    setObserve(){
+
+      const io = new IntersectionObserver(this.obCallback,this.obConfig);
+
+      setTimeout(function(){
+        io.observe(document.getElementById("skillDiv"));
+      },20);
+
+    },
+    obCallback(entries){
+      if(entries[0].isIntersecting){
+        this.isShow = true;
+      }else{
+        if(entries[0].boundingClientRect.top<0){
+          this.isShow = true;
+        }else{
+          this.isShow = false;
+        }
+      }
     }
+
 
   },
   mounted() {
-   this.paData = this.$store.state;
+
+   this.getStoreData();
    this.getPlatform();
+   this.setObserve();
+
+
+
   },
   computed: {
 
@@ -191,6 +223,20 @@ export default {
   margin-top:20px;
 
 }
+.con_non{
+  /*transition-delay: 4s;*/
+  /*translateY : -60*/
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  transform: translateY(100px);
+
+}
+.con1_ani{
+  transition: transform 0.5s ease, opacity 0.5s ease;
+
+  transform: translateY(0);
+  opacity: 1.0;
+}
 
 </style>
 <style>
@@ -205,6 +251,7 @@ export default {
 }
 .img-fluid{
   height: 500px;
+  opacity: 0.4;
 }
 .card-img-top{
   width: 30vh;

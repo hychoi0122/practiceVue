@@ -21,6 +21,10 @@ const router = new Router({
             component : ()=> import('@/menu/menuFrame'),
             children : routerPath.menu
         },
+
+
+
+
     ]
 
 })
