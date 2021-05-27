@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-card bg-variant="light" text-variant="black" style="height: 250px;">
+    <b-card bg-variant="light" text-variant="black" style="height: 250px; text-align: center;">
       <b-card-text style="margin-top:50px;">
         <h3>STUDY / TEST</h3>
       </b-card-text>
@@ -24,7 +24,39 @@
         <menuVueStudyPage></menuVueStudyPage>
       </div>
       <div v-if="!pageTab">
-        <div>ㅇㅇ</div>
+        <div>
+          <pre>
+            <code>
+              let array = [];
+
+              for(let i = 0; i<=10000; i++){
+                  array.push(i);
+                  // array.push(i);
+                  array.push(i);
+              }
+
+              console.time();
+              [...new Set(array)];
+              console.timeEnd()
+
+              console.time('타이머');
+              array.filter((item, index) => array.indexOf(item) === index);
+              console.timeEnd('타이머');
+
+              console.time();
+              let test = array.reduce((acc, i) => acc.includes(i) ? acc : [...acc, i], []);
+              console.timeEnd();
+
+              console.log(test);
+
+
+            </code>
+
+
+          </pre>
+
+
+        </div>
       </div>
 
 
@@ -64,6 +96,28 @@ export default {
   methods : {
   },
   mounted() {
+    let array = [];
+
+    for(let i = 0; i<=10000; i++){
+      array.push(i);
+      // array.push(i);
+      array.push(i);
+    }
+
+    console.time();
+    [...new Set(array)];
+    console.timeEnd()
+
+    console.time('타이머');
+    array.filter((item, index) => array.indexOf(item) === index);
+    console.timeEnd('타이머');
+
+    console.time();
+    let test = array.reduce((acc, i) => acc.includes(i) ? acc : [...acc, i], []);
+    console.timeEnd();
+
+    console.log(test);
+
   },
 
 
