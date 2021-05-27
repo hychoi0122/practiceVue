@@ -1,6 +1,19 @@
 <template>
   <div>
+    <b-card bg-variant="light" text-variant="black" style="height: 250px;">
+      <b-card-text style="margin-top:50px;">
+        <h3>STUDY / TEST</h3>
+      </b-card-text>
+      <b-card-text>
+        스티디와 테스트를 위한 페이지입니다.
+      </b-card-text>
+      <b-card-text>
+        현재 vue.js 학습한 것에 대해 기록하였습니다.
+      </b-card-text>
+    </b-card>
+
     <div class="main_container">
+
       <div class="study_con ">
         <b-button-group>
           <b-button :class="[pageTab ? classObject:'']" @click="pageTab = true">VUE STUDY</b-button>
@@ -9,10 +22,9 @@
       </div>
       <div v-if="pageTab">
         <menuVueStudyPage></menuVueStudyPage>
-
       </div>
       <div v-if="!pageTab">
-        <div :title="titleMessage">ㅇㅇ</div>
+        <div>ㅇㅇ</div>
       </div>
 
 
@@ -31,7 +43,7 @@ import pic from "@/assets/img/laptop_menu1_slide.jpg"
 import menuVueStudyPage from "@/page/menu/menuVueStudyPage";
 
 export default {
-  name : "testPage",
+  name : "study_test",
   components: {
     menuVueStudyPage
 

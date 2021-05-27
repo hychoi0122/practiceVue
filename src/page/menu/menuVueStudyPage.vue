@@ -1,8 +1,13 @@
 <template>
   <div>
-    <div class="study_con study_card" @click="studyShow[0] = !studyShow[0]">
-      <h4>Vue란?</h4>
-      <div class="study_con" v-if="studyShow[0]">
+    <div class="study_con study_card" >
+      <div class="study_con_header">
+        <h4 class="study_con_header_inline">
+          <span>Vue란?</span>
+        </h4>
+        <b-button pill variant="success" class="study_con_header_inline " @click="shClick($event)">ᐁ</b-button>
+      </div>
+      <div class="study_con study_none">
         <p>사용자 인터페이스 ( 프론트엔드 )를 만들기 위한 <b>프로그레시브 프레임워크</b></p>
         <br>
         <h4><b>설치방법</b></h4>
@@ -15,26 +20,54 @@
       </div>
     </div>
 
-    <div class="study_con study_card" @click="studyShow[1] = !studyShow[1]">
-      <h4><p>양방향 data 사용</p></h4>
-      <div class="study_con" v-if="studyShow[1]">
+    <div class="study_con study_card">
+      <div class="study_con_header">
+        <h4 class="study_con_header_inline">
+          <span>양방향 DATA 사용</span>
+        </h4>
+        <b-button pill variant="success" class="study_con_header_inline " @click="shClick($event)">ᐁ</b-button>
+      </div>
+      <div class="study_con study_none">
         message : {{ message }}
         <p>이처럼 data영역에 message를 선언한 후 중괄호  <code>{{}}</code>를 이용하여 변수를 사용할 수 있다.</p>
+          <pre>
+            <code>
+              data : ()=> ({
+              message : "메세지",
+
+              }),
+            </code>
+          </pre>
       </div>
     </div>
 
-    <div class="study_con study_card" @click="studyShow[3] = !studyShow[3]">
-      <h4><p>조건문과 반복문</p></h4>
-      <div class="study_con" v-if="studyShow[3]">
+    <div class="study_con study_card">
+      <div class="study_con_header">
+        <h4 class="study_con_header_inline">
+            <span>조건문과 반복문</span>
+        </h4>
+        <b-button pill variant="success" class="study_con_header_inline " @click="shClick($event)">ᐁ</b-button>
+      </div>
+      <div class="study_con study_none">
         seen : true ( data에 선언되어있음 )
         <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div><div style="line-height:130%">3</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#ff3399"></span><span style="color:#a71d5d">&lt;</span>div&nbsp;id<span style="color:#ff3399"></span><span style="color:#a71d5d">=</span><span style="color:#63a35c">"app-3"</span><span style="color:#ff3399"></span><span style="color:#a71d5d">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;<span style="color:#ff3399"></span><span style="color:#a71d5d">&lt;</span>p&nbsp;v<span style="color:#ff3399"></span><span style="color:#a71d5d">-</span><span style="color:#a71d5d">if</span><span style="color:#a71d5d">=</span><span style="color:#63a35c">"seen"</span><span style="color:#ff3399"></span><span style="color:#a71d5d">&gt;</span>이제&nbsp;나를&nbsp;볼&nbsp;수&nbsp;있어요<span style="color:#ff3399"></span><span style="color:#a71d5d">&lt;</span><span style="color:#ff3399"></span><span style="color:#a71d5d">/</span>p<span style="color:#ff3399"></span><span style="color:#a71d5d">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#ff3399"></span><span style="color:#a71d5d">&lt;</span><span style="color:#ff3399"></span><span style="color:#a71d5d">/</span>div<span style="color:#ff3399"></span><span style="color:#a71d5d">&gt;</span></div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+        <br>
+        <pre>
+          <code>
+
+          </code>
+        </pre>
       </div>
     </div>
 
-
-    <div class="study_con study_card" @click="studyShow[4] = !studyShow[4]">
-      <h4><p>이미지 파일 첨부</p></h4>
-      <div class="study_con" v-if="studyShow[4]">
+    <div class="study_con study_card" >
+      <div class="study_con_header">
+        <h4 class="study_con_header_inline">
+          <span>이미지 파일 첨부</span>
+        </h4>
+        <b-button pill variant="success" class="study_con_header_inline " @click="shClick($event)">ᐁ</b-button>
+      </div>
+      <div class="study_con study_none">
         <input class="btn btn-secondary" type="file" @change="handleChange">
         <div style="height: 200px;" v-if="!preview"></div>
         <div style="height: 200px; display: inline-block" v-if="preview"><img v-bind:src="preview" height="150px" width="150px"></div>
@@ -57,6 +90,28 @@
       </div>
     </div>
 
+    <div class="study_con study_card" >
+      <div class="study_con_header">
+        <h4 class="study_con_header_inline">
+          <span>Jquery없이 몇번째 요소인지 알아내기</span>
+        </h4>
+        <b-button pill variant="success" class="study_con_header_inline " @click="shClick($event)">ᐁ</b-button>
+      </div>
+      <div class="study_con study_none">
+        <p></p>
+        <pre>
+          <code>
+            getElementIndex(ele){
+            // Array.from(ele.parentNode.childNodes).indexOf(ele) ==  [].indexOf.call(ele.parentNode.children, ele)
+            // from은 es5이상 문법으로 인터넷 익스플로러에서 사용불가
+            return [].indexOf.call(ele.parentNode.children, ele);
+            },
+
+          </code>
+        </pre>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -67,15 +122,6 @@ export default {
     message : "메세지",
     preview : '',
 
-    studyShow : {
-      0 : false,
-      1 : false,
-      2 : false,
-      3 : false,
-      4 : false,
-      5 : false,
-    }
-
   }),
   methods : {
     handleChange :function (event){
@@ -84,10 +130,37 @@ export default {
         this.preview = window.URL.createObjectURL(file)
       }
     },
-    change(){
-      this.studyShow1[0] = !this.studyShow1[0]
-      console.log(this.studyShow[0])
+    shClick(event){
+      let ele = event.target;
+
+      ele.classList.toggle('btn_toggle');
+      ele.classList.toggle('btn_success');
+
+      if(ele.classList.contains("btn_toggle")){
+        ele.innerHTML = "ᐃ";
+      }else{
+        ele.innerHTML = "ᐁ";
+      }
+      ele.parentNode.parentNode.children[1].classList.toggle('study_none');
+      //contains 시 클래스가 포함된 여부를 확인할 수 있음
+      //class 키고 끔 ( jqurey의 $(this).togglSwitch )
+
+    },
+    changeCode(str){
+      console.log(str);
+
+      return "<div>1</div>"
     }
+    // 부모요소중 몇번째 요소인지에 대한 값 얻기
+    // getElementIndex(ele){
+    //   //어레이 라이크 객체 ?
+    //   // 아래와 동일
+    //   // console.log(Array.from(ele.parentNode.childNodes).indexOf(ele))
+    //   return [].indexOf.call(ele.parentNode.children, ele);
+    // },
+
+
+
   }
 }
 </script>
@@ -124,14 +197,38 @@ pre code {
   overflow-x: auto;
   color: #525252;
   white-space: pre;
-  padding: 1.2em 1.4em;
+  padding: 0em 1.4em;
   font-size: 0.85rem;
   line-height: 1.6rem;
   display: block;
   text-align: left;
+  background-color: #f8f8f8;
+}
+.study_none{
+  opacity: 0;
+  height: 0;
+}
+.study_con_header{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+}
+.study_con_header_inline{
+  display: inline-flex;
+}
+.btn_toggle{
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+.btn_toggle:focus{
+  background-color: #dc3545;
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.2rem rgb(220 53 69 / 50%);
 }
 /*pre code .hljs-tag{*/
 /*  color: #2973b7;*/
 /*}*/
+
 
 </style>
