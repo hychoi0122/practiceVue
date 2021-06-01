@@ -1,34 +1,34 @@
 <template>
 
-  <div class="css_container">
+  <div class="css_container" v-if="test" @click="test=false">
     <div class="css_body" >
       <ul class="ul_Words">
         <li class="Words-line">
           <p class="Words-line-p">&nbsp;</p>
-          <p class="Words-line-p">CSS Only</p>
+          <p class="Words-line-p">HY BLOG</p>
         </li>
         <li class="Words-line">
-          <p class="Words-line-p">CSS Only</p>
-          <p class="Words-line-p">Perspective</p>
+          <p class="Words-line-p">HY BLOG</p>
+          <p class="Words-line-p">Screen</p>
         </li>
         <li class="Words-line">
-          <p class="Words-line-p">Perspective</p>
-          <p class="Words-line-p">Text Effect</p>
+          <p class="Words-line-p">Screen</p>
+          <p class="Words-line-p">Loading </p>
         </li>
         <li class="Words-line">
-          <p class="Words-line-p">Text Effect</p>
-          <p class="Words-line-p">by</p>
+          <p class="Words-line-p">Loading</p>
+          <p class="Words-line-p">Test</p>
         </li>
         <li class="Words-line">
-          <p class="Words-line-p">by</p>
-          <p class="Words-line-p">James</p>
+          <p class="Words-line-p">Test</p>
+          <p class="Words-line-p">2021.05.28</p>
         </li>
         <li class="Words-line">
-          <p class="Words-line-p">James</p>
-          <p class="Words-line-p">Bosworth</p>
+          <p class="Words-line-p">2021.05.28</p>
+          <p class="Words-line-p">Click</p>
         </li>
         <li class="Words-line">
-          <p class="Words-line-p">Bosworth</p>
+          <p class="Words-line-p">Click</p>
           <p class="Words-line-p">&nbsp;</p>
         </li>
       </ul>
@@ -42,7 +42,10 @@
 
 <script>
 export default {
-name: "menu3"
+  name: "indexLoading",
+  data : ()=>({
+    test : true,
+  })
 }
 </script>
 
@@ -127,8 +130,14 @@ body {
 }
 
 .css_container {
-  background-color: #5138BE;
-  height: 1000px;
+  /*background-color: #5138BE;*/
+  background-color: #2c3e50;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 999;
 }
 .css_body{
   color: #FFFFFF;

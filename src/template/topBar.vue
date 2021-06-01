@@ -10,7 +10,7 @@
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto" >
           <b-nav-form>
-            <b-nav-item class="navbar-brand" @click="scrollTop" >T O P ⤴ </b-nav-item>
+            <b-nav-item class="navbar-brand" @click="scrollTop" >T O P △ </b-nav-item>
 <!--            <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>-->
 
           </b-nav-form>

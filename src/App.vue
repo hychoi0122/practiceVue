@@ -1,16 +1,23 @@
 <template>
   <div id="app">
-    <topBar></topBar>
-    <router-view></router-view>
+
+    <topBar ></topBar>
+    <router-view ></router-view>
+    <index-loading></index-loading>
   </div>
 </template>
 
 <script>
 import topBar from './template/topBar'
+import indexLoading from "@/template/indexLoading";
 export default {
   name: 'App',
+  data : ()=> ({
+    test : false,
+  }),
   components: {
-    topBar
+    topBar,
+    indexLoading
   }
 }
 </script>

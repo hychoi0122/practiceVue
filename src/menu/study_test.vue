@@ -29,7 +29,7 @@
             <code>
               let array = [];
 
-              for(let i = 0; i<=10000; i++){
+              for(let i = 0; i&lt;=10000; i++){
                   array.push(i);
                   // array.push(i);
                   array.push(i);
@@ -54,6 +54,10 @@
 
 
           </pre>
+
+
+
+
 
 
         </div>
@@ -96,27 +100,27 @@ export default {
   methods : {
   },
   mounted() {
-    let array = [];
-
-    for(let i = 0; i<=10000; i++){
-      array.push(i);
-      // array.push(i);
-      array.push(i);
-    }
-
-    console.time();
-    [...new Set(array)];
-    console.timeEnd()
-
-    console.time('타이머');
-    array.filter((item, index) => array.indexOf(item) === index);
-    console.timeEnd('타이머');
-
-    console.time();
-    let test = array.reduce((acc, i) => acc.includes(i) ? acc : [...acc, i], []);
-    console.timeEnd();
-
-    console.log(test);
+    // let array = [];
+    //
+    // for(let i = 0; i<=10000; i++){
+    //   array.push(i);
+    //   // array.push(i);
+    //   array.push(i);
+    // }
+    //
+    // console.time();
+    // // [...new Set(array)];
+    // console.timeEnd()
+    //
+    // console.time('타이머');
+    // array.filter((item, index) => array.indexOf(item) === index);
+    // console.timeEnd('타이머');
+    //
+    // console.time();
+    // let test = array.reduce((acc, i) => acc.includes(i) ? acc : [...acc, i], []);
+    // console.timeEnd();
+    //
+    // console.log(test);
 
   },
 
@@ -160,6 +164,16 @@ export default {
 .btnActive{
 
 }
+
+
+
+
+
+
+
+
+
+
 </style>
 <style>
 .btn-secondary{

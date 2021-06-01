@@ -34,6 +34,7 @@
           id="carousel-1"
           background="#ababab"
           style="text-shadow: 1px 1px 2px #333;"
+          class="tracking-in-contract-bck"
       >
         <b-carousel-slide
             caption="HY BLOG"
@@ -78,6 +79,9 @@
     <br>
     <br>
     <br>
+
+    <h1 class="tracking-in-contract-bck">ddd</h1>
+    <h1 class="tracking-in-contract">ddd</h1>
     <br>
     <br>
     <br>
@@ -92,7 +96,9 @@
     <br>
     <br>
     <br>
+
   </div>
+
 
 
 
@@ -238,6 +244,50 @@ export default {
   opacity: 1.0;
 }
 
+
+.tracking-in-contract-bck {
+  -webkit-animation: tracking-in-contract-bck 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: tracking-in-contract-bck 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+
+
+
+
+
+
+@-webkit-keyframes tracking-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px);
+    transform: translateZ(400px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px);
+    transform: translateZ(400px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
 </style>
 <style>
 .card-img{
