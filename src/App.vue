@@ -1,9 +1,14 @@
 <template>
   <div id="app">
+    <div v-if="test">
+      <topBar></topBar>
+      <router-view ></router-view>
+    </div>
+    <div v-else @click="test = !test">
+      <index-loading></index-loading>
+    </div>
 
-    <topBar ></topBar>
-    <router-view ></router-view>
-    <index-loading></index-loading>
+
   </div>
 </template>
 
@@ -18,6 +23,9 @@ export default {
   components: {
     topBar,
     indexLoading
+  },
+  mounted() {
+    console.log(navigator.mediaDevices);
   }
 }
 </script>

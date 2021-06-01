@@ -1,6 +1,7 @@
 <template>
 
-  <div class="css_container" v-if="test" @click="test=false">
+<!--  <div class="css_container" v-if="test" @click="test=false">-->
+  <div class="css_container">
     <div class="css_body" >
       <ul class="ul_Words">
         <li class="Words-line">
@@ -29,18 +30,23 @@
         </li>
         <li class="Words-line">
           <p class="Words-line-p">Click</p>
-          <p class="Words-line-p">&nbsp;</p>
+          <p class="Words-line-p"><button class="btn_message">MAINPAGE</button></p>
         </li>
       </ul>
 
     </div>
+
   </div>
 
 
 
 </template>
 
+
+
 <script>
+
+
 export default {
   name: "indexLoading",
   data : ()=>({
@@ -51,15 +57,7 @@ export default {
 
 <style scoped>
 
-html {
-  background-color: #5138BE;
-  height: 100%;
-}
 
-body {
-  color: #FFFFFF;
-  display: flex;
-}
 .ul_Words {
   margin: 0 auto;
   padding: 20vh 0;
@@ -126,12 +124,13 @@ body {
   bottom: 28px;
   position: relative;
   text-align: left;
+  cursor: pointer;
 
 }
 
 .css_container {
   /*background-color: #5138BE;*/
-  background-color: #2c3e50;
+  background-color: #1E96FF;
   height: 100%;
   position: absolute;
   width: 100%;
@@ -143,7 +142,14 @@ body {
   color: #FFFFFF;
   display: flex;
 }
-
+.btn_message{
+  color:#FFFFFF;
+  background-color: #0064FF;
+  border: 1px solid #1E96FF;
+  font-weight: 900;
+  position: relative;
+  top:1px;
+}
 /*
 ** The hover interaction
 */
