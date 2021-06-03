@@ -112,6 +112,29 @@
       </div>
     </div>
 
+    <div class="study_con study_card" >
+      <div class="study_con_header">
+        <h4 class="study_con_header_inline">
+          <span>MAP JAVASCRIPT</span>
+        </h4>
+        <b-button pill variant="success" class="study_con_header_inline " @click="shClick($event)">ᐁ</b-button>
+      </div>
+      <div class="study_con study_none">
+        <p>MAP : 키가 있는 값이 저장된 컬렉션 </p>
+
+        <pre>
+          <code>
+            getElementIndex(ele){
+            // Array.from(ele.parentNode.childNodes).indexOf(ele) ==  [].indexOf.call(ele.parentNode.children, ele)
+            // from은 es5이상 문법으로 인터넷 익스플로러에서 사용불가
+            return [].indexOf.call(ele.parentNode.children, ele);
+            },
+
+          </code>
+        </pre>
+      </div>
+    </div>
+
 
   </div>
 </template>
