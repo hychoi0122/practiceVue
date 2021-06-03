@@ -493,6 +493,7 @@ export default {
     //   return [].indexOf.call(ele.parentNode.children, ele);
     // },
     method1(){
+      console.log("-------MAP 생성,set -------");
       let mapT = new Map();
       let name = {};
       mapT.set("name","hoyoung1")
@@ -505,6 +506,7 @@ export default {
       console.log(mapT)
     },
     method2(){
+      console.log("-------MAP 생성,get -------");
       let mapT = new Map();
       let name = {};
       mapT.set("name","hoyoung1")
@@ -521,7 +523,7 @@ export default {
       console.log(mapT.get(new Object()))  // 해당키 존재 x
     },
     method3(){
-
+      console.log("-------MAP has -------");
       let mapT = new Map();
       let name = {};
       mapT.set("name","hoyoung1")
@@ -539,6 +541,7 @@ export default {
 
     },
     method4(){
+      console.log("-------MAP keys,values,size,clear -------");
       let mapT = new Map();
       let name = {};
       mapT.set("name","hoyoung1")
@@ -556,7 +559,7 @@ export default {
       console.log("clear이후 : "+mapT);
     },
     method5(){
-
+      console.log("-------MAP 배열>map, 객체>map , map>객체 -------");
       //배열을 map으로
       let map = new Map([
         ['1',  'str1'],
@@ -587,6 +590,7 @@ export default {
     },
     method6(){
       // Set객체 생성후 add를 통한 확인
+      console.log("-------SET 생성,add -------");
       let setT = new Set();
       setT.add(1);
       setT.add(1);
@@ -602,6 +606,7 @@ export default {
       console.log(setT1);
     },
     method7(){
+      console.log("-------SET delete -------");
       // 배열을 생성자에 삽입
       let arr = [4,4,4,1,1,1,2,2,2,3,3,3]; // 1~4중복값이 있는 배열
       let setT1 = new Set(arr);
@@ -612,6 +617,7 @@ export default {
       console.log(setT1.delete(3));
     },
     method8(){
+      console.log("-------SET has,size,clear -------");
       // 배열을 생성자에 삽입
       let arr = [4,4,4,1,1,1,2,2,2,3,3,3]; // 1~4중복값이 있는 배열
       let setT1 = new Set(arr);
@@ -624,6 +630,7 @@ export default {
       console.log(setT1)
     },
     method9(){
+      console.log("------- SET 중복값제거 시간 테스트 -------");
       let array = [];
 
       for(let i = 0; i<=10000; i++){
